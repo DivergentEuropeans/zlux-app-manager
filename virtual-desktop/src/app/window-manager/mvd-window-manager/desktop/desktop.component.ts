@@ -210,7 +210,7 @@ class AppDispatcherLoader implements MVDHosting.LoginActionInterface {
           const id = plugin.getIdentifier();
           if (appContents[id] && appContents[id].actions) { // If config has pre-existing actions for this plugin id,
             appContents[id].actions.forEach((actionObject: any)=> {
-              ZoweZLUX.dispatcher.addRecognizerObject(actionObject); // register each object with the Dispatcher.
+              ZoweZLUX.dispatcher.registerAbstractAction(actionObject); // register each object with the Dispatcher.
             });
             this.log.info(`ZWED5056I`, appContents[id].actions.length, id); //this.log.info(`Loaded ${appContents[id].actions.length} actions for App(${id})`);
           }
